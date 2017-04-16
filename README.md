@@ -1,3 +1,7 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/1xoubmcpfqa86rux?svg=true)](https://ci.appveyor.com/project/andrewlock/netescapades-templating/branch/master)
+[![NuGet](https://img.shields.io/nuget/v/NetEscapades.Templating.svg)](https://www.nuget.org/packages/NetEscapades.Templating/)
+[![MyGet CI](https://img.shields.io/myget/andrewlock-ci/v/NetEscapades.Templating.svg)](http://myget.org/gallery/acndrewlock-ci)
+
 # NetEscapades.Templating
 Templates for use with the the .NET CLI's dotnet new functionality
 
