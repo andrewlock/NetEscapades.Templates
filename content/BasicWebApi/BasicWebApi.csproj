@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Build">
+    <TargetFrameworks Condition="'$(NETCore)' == 'true' AND '$(NETFramework)' == 'true'">netcoreapp1.1;net461</TargetFrameworks>
+    <TargetFramework Condition="'$(NETCore)' == 'true' AND '$(NETFramework)' != 'true'">netcoreapp1.1</TargetFramework>
+    <TargetFramework Condition="'$(NETCore)' != 'true' AND '$(NETFramework)' == 'true'">net461</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Version>1.0.0</Version>
+    <Authors>PROJECT-AUTHOR</Authors>
+    <Company>PROJECT-AUTHOR</Company>
+    <Product>PROJECT-TITLE</Product>
+    <Description>PROJECT-DESCRIPTION</Description>
+    <Copyright>Copyright © PROJECT-AUTHOR. All rights Reserved</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup Label="Package References">
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" Condition="'$(IncludeApplicationInsights)' == 'True'"  />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Cors" Version="1.1.2" Condition="'$(CORS)' == 'True'"  />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.DataAnnotations" Version="1.1.2" Condition="'$(DataAnnotations)' == 'True'"  />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.ApiExplorer" Version="1.1.2" Condition="'$(ApiExplorer)' == 'True'"  />
+  </ItemGroup>
+
+</Project>

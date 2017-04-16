@@ -1,0 +1,113 @@
+{
+  "author": "Andrew Lock",
+  "classifications": [
+    "WebAPI",
+    "Web API"
+  ],
+  "name": "Basic ASP.NET Core Web API",
+  "identity": "NetEscapades.Templates.BasicWebApi",
+  "shortName": "basicwebapi",
+  "tags": {
+    "language": "C#"
+  },
+  "sourceName": "BasicWebApi",
+  "guids": [
+    "f18cbd66-07e3-4a89-9da8-dc55b3c5e798",
+    "25b12e09-af51-4dfa-885c-9086290b3c61"
+  ],
+  "symbols": {
+    "ApiExplorer": {
+      "type": "parameter",
+      "datatype": "bool",
+      "isRequired": false,
+      "defaultValue": "false",
+      "description": "The ApiExplorer functionality allows you to expose metadata about your API endpoints. You can use it to generate documentation about your application. Enabling this option will add the ApiExplorer libraries and services to your project."
+    },
+    "Controller": {
+      "type": "parameter",
+      "datatype": "bool",
+      "isRequired": false,
+      "defaultValue": "false",
+      "description": "If true, this will generate an example ValuesController in your project."
+    },
+    "DataAnnotations": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "DataAnnotations provide declarative metadata and validations for models in ASP.NET Core."
+    },
+    "CORS": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Browser security prevents a web page from making AJAX requests to another domain. This restriction is called the same-origin policy, and prevents a malicious site from reading sensitive data from another site. CORS is a W3C standard that allows a server to relax the same-origin policy. Using CORS, a server can explicitly allow some cross-origin requests while rejecting others."
+    },
+    "Title": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "BasicWebApi",
+      "replaces": "PROJECT-TITLE",
+      "description": "The name of the project which determines the assembly product name. If the Swagger feature is enabled, shows the title on the Swagger UI."
+    },
+    "Description": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "BasicWebApi",
+      "replaces": "PROJECT-DESCRIPTION",
+      "description": "A description of the project which determines the assembly description. If the Swagger feature is enabled, shows the description on the Swagger UI."
+    },
+    "Author": {
+      "type": "parameter",
+      "datatype": "string",
+      "defaultValue": "Project Author",
+      "replaces": "PROJECT-AUTHOR",
+      "description": "The name of the author of the project which determines the assembly author, company and copyright information."
+    },
+    "Framework": {
+      "type": "parameter",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": ".NET Core",
+          "description": "Run cross platform (on Windows, Mac and Linux). The framework is made up of NuGet packages which can be shipped with the application so it is fully stand-alone."
+        },
+        {
+          "choice": ".NET Framework",
+          "description": "Gives you access to the full breadth of libraries available in .NET instead of the subset available in .NET Core but requires it to be pre-installed."
+        },
+        {
+          "choice": "Both",
+          "description": "Target both .NET Core and .NET Framework."
+        }
+      ],
+      "defaultValue": "Both",
+      "description": "Decide which version of the .NET Framework to target."
+    },
+    "NETCore": {
+      "type": "computed",
+      "value": "(Framework == \".NET Core\" || Framework == \"Both\")"
+    },
+    "NETFramework": {
+      "type": "computed",
+      "value": "(Framework == \".NET Framework\" || Framework == \"Both\")"
+    },
+    "IncludeApplicationInsights": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Whether or not to include Application Insights in the project"
+    },
+  },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!Controller)",
+          "exclude": [
+            "Controllers/**/*"
+          ]
+        }
+      ]
+    }
+  ]
+}
