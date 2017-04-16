@@ -8,7 +8,7 @@ Templates for use with the the .NET CLI's dotnet new functionality
 # How to install the templates
 
 1. You must have the latest version of the dotnet tooling. This comes with Visual Studio 2017 or from https://dot.net. 
-2. Run `dotnet new --install NetEscapades.Templating::*` to install the project template. 
+2. Run `dotnet new --install NetEscapades.Templates::*` to install the project template. 
 3. Run `dotnet new basicwebapi --help` to see how to select the features of the project. 
 4. Run `dotnew new basicwebapi --name "MyTemplate"` along with any other custom options to create a project from the template.
 
