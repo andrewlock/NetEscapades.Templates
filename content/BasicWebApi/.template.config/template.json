@@ -80,7 +80,7 @@
           "description": "Target both .NET Core and .NET Framework."
         }
       ],
-      "defaultValue": "Both",
+      "defaultValue": ".NET Core",
       "description": "Decide which version of the .NET Framework to target."
     },
     "NETCore": {
