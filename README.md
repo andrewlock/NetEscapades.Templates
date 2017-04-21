@@ -17,6 +17,20 @@ Templates for use with the the .NET CLI's dotnet new functionality
 You can create new projects with `dotnet new`. For more info take a look at
 [Announcing .NET Core Tools Updates in VS 2017 RC](https://blogs.msdn.microsoft.com/dotnet/2017/02/07/announcing-net-core-tools-updates-in-vs-2017-rc/). For further details, check out the [excellent blog posts](http://rehansaeed.com/custom-project-templates-using-dotnet-new/) by Muhammed Rehan Saeed.
 
+# Running the project after it's generated
+
+Once you have created a new project using `dotnet new`, you must restore packages before using `dotnet run`.
+
+```
+dotnet new basicwebapi --name "MyProject" 
+dotnet restore
+dotnet run -f netcoreapp1.1
+```
+
+> Note that it is possible to target both .NET Framework and .NET Core with the template. If you do so, you must specify the target framework when calling `dotnet run` using the `-f` switch. If you multi target and don't specify the switch, you will currently get a slightly confusing error from the CLI: 
+> ` Unable to run your project. Please ensure you have a runnable project type and ensure 'dotnet run' supports this project. The current OutputType is 'Exe'.`
+
+
 # General info on installing templates
 
 Templates can be installed from packages in any NuGet feed, directories on the file system or ZIP type archives (zip, nupkg, vsix, etc.)
