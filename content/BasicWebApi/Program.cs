@@ -11,17 +11,20 @@ namespace BasicWebApi
     {
         public static void Main(string[] args)
         {
-            var host = new WebHostBuilder()
+            CreateWebHostBuilder(args).Build().Run();
+        }
+
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
-                .UseStartup<Startup>()
-//#if (IncludeApplicationInsights)                
-                .UseApplicationInsights()
-//#endif
-                .Build();
-
-            host.Run();
-        }
+                .ConfigureLogging((hostingContext, logging) =>
+                {
+                    logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
+                    logging.AddConsole();
+                    logging.AddDebug();
+                })
+                .UseStartup<Startup>();
     }
 }

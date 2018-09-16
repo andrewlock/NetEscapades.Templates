@@ -62,41 +62,7 @@
       "defaultValue": "Project Author",
       "replaces": "PROJECT-AUTHOR",
       "description": "The name of the author of the project which determines the assembly author, company and copyright information."
-    },
-    "Framework": {
-      "type": "parameter",
-      "datatype": "choice",
-      "choices": [
-        {
-          "choice": ".NET Core",
-          "description": "Run cross platform (on Windows, Mac and Linux). The framework is made up of NuGet packages which can be shipped with the application so it is fully stand-alone."
-        },
-        {
-          "choice": ".NET Framework",
-          "description": "Gives you access to the full breadth of libraries available in .NET instead of the subset available in .NET Core but requires it to be pre-installed."
-        },
-        {
-          "choice": "Both",
-          "description": "Target both .NET Core and .NET Framework."
-        }
-      ],
-      "defaultValue": ".NET Core",
-      "description": "Decide which version of the .NET Framework to target."
-    },
-    "NETCore": {
-      "type": "computed",
-      "value": "(Framework == \".NET Core\" || Framework == \"Both\")"
-    },
-    "NETFramework": {
-      "type": "computed",
-      "value": "(Framework == \".NET Framework\" || Framework == \"Both\")"
-    },
-    "IncludeApplicationInsights": {
-      "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "false",
-      "description": "Whether or not to include Application Insights in the project"
-    },
+    }
   },
   "sources": [
     {
